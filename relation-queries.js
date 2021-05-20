@@ -70,3 +70,8 @@ async function getTodoItemsWithTags() {
 }
 
 getTodoItemsWithTags().then((items) => console.log(items));
+
+// const items = await todoItem.findByPk(2, {
+//   attributes: ["task"],
+//   include: [{ model: tag, attributes: ["title"] }],
+// });
