@@ -1,6 +1,7 @@
 const express = require("express");
 const User = require("./models").user;
 const TodoList = require("./models").todoList;
+const authRouter = require("./routers/auth");
 
 const userRouter = require("./routers/user");
 
@@ -18,6 +19,7 @@ app.use(express.json()); // body parser middleware
 app.use(loggingMiddleware);
 
 app.use("/users", userRouter);
+app.use("/auth", authRouter);
 
 app.post("/echo", (request, response) => {
   response.json(request.body);
